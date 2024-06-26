@@ -110,6 +110,36 @@ export function DataTable<TData, TValue>({
             className='max-w-sm'
           />
         </div>
+        <div className='flex items-center py-4'>
+          <Input
+            placeholder='Search by email...'
+            value={(table.getColumn('email')?.getFilterValue() as string) ?? ''}
+            onChange={event =>
+              table.getColumn('email')?.setFilterValue(event.target.value)
+            }
+            className='max-w-sm'
+          />
+          
+        </div>
+
+        <div className='flex items-center py-4'>
+          <Input
+            placeholder='Search by lastSeen...'
+            value={(table.getColumn('lastSeen')?.getFilterValue() as string) ?? ''}
+            onChange={event =>
+              table.getColumn('lastSeen')?.setFilterValue(event.target.value)
+            }
+            className='max-w-sm'
+          />
+          
+        </div>
+
+
+
+
+
+
+
 
         {/* Column visibility */}
         <DropdownMenu>
